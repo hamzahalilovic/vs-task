@@ -1,0 +1,122 @@
+.dropdown-item {
+  background-color: #fff;
+  color: rgb(0, 46, 105);
+  padding: 2px 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  position: relative;
+  min-height: 25px;
+  transition: background 0.2s;
+}
+
+.dropdown-icon {
+  margin-right: 8px;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  color: rgb(0, 46, 105);
+}
+.dropdown-icon svg {
+  fill: rgb(0, 46, 105);
+}
+.dropdown-label {
+  flex: 1;
+  font-size: 12px;
+  color: rgb(0, 46, 105);
+}
+
+.no-icon .dropdown-label {
+  margin-left: 0;
+}
+
+.dropdown-divider {
+  height: 1px;
+  background-color: #e0e0e0;
+}
+
+.dropdown-item-content {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.submenu-arrow {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  font-size: 14px;
+  color: inherit;
+}
+.submenu-arrow svg {
+  fill: currentColor;
+}
+
+/* top level items */
+.top-level-item:hover {
+  background-color: rgb(1, 99, 227) !important;
+}
+
+.top-level-item:hover > .dropdown-item-content .dropdown-label,
+.top-level-item:hover > .dropdown-item-content .dropdown-icon svg,
+.top-level-item:hover > .dropdown-item-content .submenu-arrow svg {
+  color: white !important;
+  fill: white !important;
+}
+
+.submenu-item:hover {
+  background-color: rgb(234, 243, 255) !important;
+}
+
+.submenu-item:hover > .dropdown-item-content .dropdown-label,
+.submenu-item:hover > .dropdown-item-content .dropdown-icon svg,
+.submenu-item:hover > .dropdown-item-content .submenu-arrow svg {
+  color: rgb(3, 21, 44) !important;
+  fill: rgb(3, 21, 44) !important;
+}
+
+.submenu {
+  position: absolute;
+  top: 0;
+  background: white;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 180px;
+  padding: 5px 0;
+  list-style: none;
+  z-index: 1000;
+
+  opacity: 0;
+  transform: translateY(-10%);
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+.submenu.open {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.submenu-right {
+  left: 100%;
+  margin-left: 5px;
+}
+.submenu-left {
+  right: 100%;
+  margin-right: 5px;
+}
+
+.submenu .submenu {
+  top: 0;
+  left: 100%;
+  margin-left: 5px;
+  background: #f9f9f9;
+  border-radius: 5px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+.submenu-left .submenu {
+  right: 100%;
+  left: auto;
+  margin-right: 5px;
+}
